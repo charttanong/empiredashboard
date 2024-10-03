@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add Staff</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="file"] {
+            border: none;
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            display: none;
+            border-radius: 8px;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #post-editor {
+            height: 400px;
+            /* Adjust height as needed */
+            margin-bottom: 20px;
+        }
+
+        .ql-editor img {
+            max-width: 100%;
+            /* Responsive size */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+            margin: 10px 0;
+            /* Margin for spacing */
+            object-fit: cover;
+            /* Cover the area without distortion */
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .delete-btn i {
+            font-size: 16px;
+            /* Adjust icon size here */
+            color: rgb(255, 222, 131);
+        }
+
+        .team-item {
+            position: relative;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+
+                </div>
+                <div class="sidebar-brand-text mx-3">Empire Global Logistics </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="news.html">
+                    <i class="fas fa-calendar fa-2x"></i>
+                    <span>News</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="article.html">
+                    <i class="fas fa-clipboard-list fa-2x"></i>
+                    <span>Article</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="download.html">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Download</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="email.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Email List</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="staff.html">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Staff</span></a>
+            </li>
+
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">September 12, 2024</div>
+                                        <span class="font-weight-bold">A new post from article</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">September 11, 2024</div>
+                                        New subscribe!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">September 10, 2024</div>
+                                        New subscribe!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <div class="container">
+                    <h2>Add New Staff</h2>
+
+                    <form id="staff-form">
+                        <div class="form-group">
+                            <label for="staff-image">Upload Profile Image</label>
+                            <input type="file" id="profile-image" accept="image/*">
+                            <img id="profile-image-preview" class="image-preview" src="" alt="Image Preview">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="line-qr">Upload Line QR Code</label>
+                            <input type="file" id="line-qr" accept="image/*">
+                            <img id="line-qr-preview" class="image-preview" src="" alt="Line QR Preview">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staff-name">Name</label>
+                            <input type="text" id="staff-name" required placeholder="Enter staff's name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staff-role">Role</label>
+                            <input type="text" id="staff-role" required placeholder="Enter staff's role">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staff-phone">Phone Number</label>
+                            <input type="tel" id="staff-phone" required placeholder="Enter phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staff-facebook">Facebook</label>
+                            <input type="text" id="staff-facebook" required placeholder="Enter Facebook ID">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staff-email">Email</label>
+                            <input type="email" id="staff-email" required placeholder="Enter Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staff-group">Select Group</label>
+                            <select id="staff-group" required>
+                                <option value="">Select a group</option>
+                                <option value="Dry Cargo Specialist">Dry Cargo Specialist</option>
+                                <option value="Bulk Cargo Specialist">Bulk Cargo Specialist</option>
+                                <option value="Liquid Cargo Specialist">Liquid Cargo Specialist</option>
+                                <option value="Special Cargo Specialist">Special Cargo Specialist</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Add Staff</button>
+                    </form>
+                </div>
+
+                <!-- Team Start -->
+                <div class="container-xxl py-5">
+                    <div class="container py-5">
+                        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+
+                            <h1 class="mb-5">Dry Cargo Specialist</h1>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="team-item p-4">
+                                    <button class="delete-btn" onclick="deleteStaff('staff1')"></button>
+                                    <i class="fas fa-trash"></i>
+                                    </button>
+                                    <div class="overflow-hidden mb-4">
+                                        <img class="img-fluid" src="img/worker1.jpg" alt="">
+                                    </div>
+                                    <h5 class="mb-0">Chai Wang</h5>
+                                    <p>Dry Cargo Specialist</p>
+                                    <p>060-01888888</p>
+                                    <div class="btn-slide mt-1">
+                                        <i class=""></i>
+                                        <span>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+
+                                            <a href="#" id="lineIcon1"><i class="fab fa-line"></i></a>
+                                            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                                            <!-- Email icon -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="team-item p-4">
+                                    <button class="delete-btn" onclick="deleteStaff('staff1')"></button>
+                                    <i class="fas fa-trash"></i>
+                                    </button>
+                                    <div class="overflow-hidden mb-4">
+                                        <img class="img-fluid" src="img/worker2.jpg" alt="">
+                                    </div>
+                                    <h5 class="mb-0">Anong Suwanna</h5>
+                                    <p>Dry Cargo Specialist</p>
+                                    <p>060-01888888</p>
+                                    <div class="btn-slide mt-1">
+                                        <i class=""></i>
+                                        <span>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+
+                                            <a href="#" id="lineIcon2"><i class="fab fa-line"></i></a>
+                                            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                                            <!-- Email icon -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                                <div class="team-item p-4">
+                                    <button class="delete-btn" onclick="deleteStaff('staff1')"></button>
+                                    <i class="fas fa-trash"></i>
+                                    </button>
+                                    <div class="overflow-hidden mb-4">
+
+                                        <img class="img-fluid" src="img/worker3.jpg" alt="">
+                                    </div>
+                                    <h5 class="mb-0">Nattapong Rattanapong</h5>
+                                    <p>Liquid Cargo Specialist</p>
+                                    <p>060-01888888</p>
+                                    <div class="btn-slide mt-1">
+                                        <i class=""></i>
+                                        <span>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+
+                                            <a href="#" id="lineIcon3"><i class="fab fa-line"></i></a>
+                                            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                                            <!-- Email icon -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                                <div class="team-item p-4">
+                                    <button class="delete-btn" onclick="deleteStaff('staff1')"></button>
+                                    <i class="fas fa-trash"></i>
+                                    </button>
+                                    <div class="overflow-hidden mb-4">
+                                        <img class="img-fluid" src="img/worker4.jpg" alt="">
+                                    </div>
+                                    <h5 class="mb-0">Kanya Phothong</h5>
+                                    <p>Dry Cargo Specialist</p>
+                                    <p>060-01888888</p>
+                                    <div class="btn-slide mt-1">
+                                        <i class=""></i>
+                                        <span>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+
+                                            <a href="#" id="lineIcon4"><i class="fab fa-line"></i></a>
+                                            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                                            <!-- Email icon -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team End -->
+
+                <div class="container-xxl py-5">
+                    <div class="container py-5">
+                        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                            <h1 class="mb-5">Liquid Cargo Specialist</h1>
+                        </div>
+                        <div class="row g-4" id="staffContainer">
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" id="staff1">
+                                <button class="delete-btn" onclick="deleteStaff('staff1')"></button>
+                                <i class="fas fa-trash"></i>
+                                </button>
+                                <div class="team-item p-4">
+
+                                    <div class="overflow-hidden mb-4">
+                                        <img class="img-fluid" src="img/worker5.jpg" alt="">
+                                    </div>
+                                    <h5 class="mb-0">Panya Sukdee</h5>
+                                    <p>Liquid Cargo Specialist</p>
+                                    <p>060-01888888</p>
+                                    <div class="btn-slide mt-1">
+                                        <i class=""></i>
+                                        <span>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#" id="lineIcon1"><i class="fab fa-line"></i></a>
+                                            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s" id="staff2">
+                                <button class="delete-btn" onclick="deleteStaff('staff1')"></button>
+                                <i class="fas fa-trash"></i>
+                                </button>
+                                <div class="team-item p-4">
+
+                                    <div class="overflow-hidden mb-4">
+                                        <img class="img-fluid" src="img/worker6.jpg" alt="">
+                                    </div>
+                                    <h5 class="mb-0">Worasa Chokchainan</h5>
+                                    <p>Liquid Cargo Specialist</p>
+                                    <p>060-01888888</p>
+                                    <div class="btn-slide mt-1">
+                                        <i class=""></i>
+                                        <span>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#" id="lineIcon4"><i class="fab fa-line"></i></a>
+                                            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; www.empireglobal.co.th 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // Preview the uploaded profile image
+        const profileImageInput = document.getElementById('profile-image');
+        const profileImagePreview = document.getElementById('profile-image-preview');
+
+        profileImageInput.addEventListener('change', () => {
+            const file = profileImageInput.files[0];
+            if (file && file.type.startsWith('image/')) { // Ensure the file is an image
+                const reader = new FileReader();
+                reader.onload = () => {
+                    profileImagePreview.src = reader.result;
+                    profileImagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select a valid image file.');
+            }
+        });
+
+        // Preview the uploaded Line QR Code
+        const lineQrInput = document.getElementById('line-qr');
+        const lineQrPreview = document.getElementById('line-qr-preview');
+
+        lineQrInput.addEventListener('change', () => {
+            const file = lineQrInput.files[0];
+            if (file && file.type.startsWith('image/')) { // Ensure the file is an image
+                const reader = new FileReader();
+                reader.onload = () => {
+                    lineQrPreview.src = reader.result;
+                    lineQrPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select a valid image file.');
+            }
+        });
+
+        // Handle form submission
+        const form = document.getElementById('staff-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('staff-name').value;
+            const role = document.getElementById('staff-role').value;
+            const phone = document.getElementById('staff-phone').value;
+            const facebook = document.getElementById('staff-facebook').value;
+            const email = document.getElementById('staff-email').value;
+            const group = document.getElementById('staff-group').value;
+            const profileImage = profileImagePreview.src;
+            const lineQr = lineQrPreview.src;
+
+            if (name && role && phone && facebook && email && group && profileImage && lineQr) {
+                // For now, just log the values. You can later send these to your backend.
+                console.log({
+                    name: name,
+                    role: role,
+                    phone: phone,
+                    facebook: facebook,
+                    email: email,
+                    group: group,
+                    profileImage: profileImage,
+                    lineQr: lineQr
+                });
+
+                // Reset form fields
+                form.reset();
+                profileImagePreview.style.display = 'none';
+                lineQrPreview.style.display = 'none';
+            } else {
+                alert('Please fill out all fields, select a group, and upload both images.');
+            }
+        });
+
+        document.querySelectorAll('.delete-staff-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const staffName = event.target.closest('.delete-staff-btn').dataset.staff;
+                const confirmDelete = confirm(`Are you sure you want to delete ${staffName}?`);
+
+                if (confirmDelete) {
+                    // Remove the entire staff card
+                    const staffCard = event.target.closest('.team-item');
+                    staffCard.remove();
+                }
+            });
+
+            function deleteStaff(staffId) {
+                const staffElement = document.getElementById(staffId);
+                if (staffElement) {
+                    staffElement.remove(); // Remove staff card from DOM
+                }
+            }
+        });
+    </script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        // Initialize Quill editor
+        const quill = new Quill('#post-editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{
+                        'header': [1, 2, false]
+                    }],
+                    ['bold', 'italic', 'underline'],
+                    ['image', 'code-block'],
+                    [{
+                        'align': []
+                    }],
+                    ['clean']
+                ]
+            }
+        });
+
+        // Custom image handler
+        const toolbar = quill.getModule('toolbar');
+        toolbar.addHandler('image', () => {
+            const input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.click();
+
+            input.onchange = () => {
+                const file = input.files[0];
+                const reader = new FileReader();
+
+                reader.onloadend = () => {
+                    const img = new Image();
+                    img.src = reader.result;
+
+                    // Create a temporary image element to preview
+                    const previewContainer = document.createElement('div');
+                    previewContainer.style.position = 'relative';
+                    const previewImage = document.createElement('img');
+                    previewImage.src = img.src;
+                    previewImage.style.maxWidth = '100%';
+                    previewImage.style.height = 'auto';
+                    previewImage.style.borderRadius = '8px';
+                    previewImage.style.margin = '10px 0';
+                    previewImage.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+                    previewContainer.appendChild(previewImage);
+                    document.body.appendChild(previewContainer); // Append to body for temporary preview
+
+                    img.onload = () => {
+                        const MAX_WIDTH = 800; // Maximum width in pixels
+                        const MAX_HEIGHT = 600; // Maximum height in pixels
+                        let width = img.width;
+                        let height = img.height;
+
+                        // Calculate new dimensions while maintaining aspect ratio
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width;
+                            width = MAX_WIDTH;
+                        }
+                        if (height > MAX_HEIGHT) {
+                            width *= MAX_HEIGHT / height;
+                            height = MAX_HEIGHT;
+                        }
+
+                        // Create a canvas to draw the resized image
+                        const canvas = document.createElement('canvas');
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // Convert the canvas back to a base64 string
+                        const resizedImage = canvas.toDataURL(file.type);
+                        quill.insertEmbed(quill.getSelection().index, 'image', resizedImage);
+
+                        // Remove preview after insertion
+                        document.body.removeChild(previewContainer);
+                    };
+                };
+
+                reader.readAsDataURL(file);
+            };
+        });
+
+        // Handle save button click
+        document.getElementById('save-post').addEventListener('click', () => {
+            const postContent = quill.root.innerHTML;
+            console.log(postContent); // Log the content for now
+            // You can later implement the fetch request to your backend here
+        });
+    </script>
+
+
+
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
